@@ -1,0 +1,35 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file that goes with our server code
+  version: "1.0.0"
+  title: Swagger REST Article
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+
+basePath: "/api"
+
+# Paths supported by the server application
+paths:
+  /posts:
+    get:
+      operationId: "posts.read"
+      tags:
+        - "Posts"
+      summary: "The posts data structure supported by the server application"
+      description: "Read the list of posts"
+      responses:
+        200:
+          description: "Successful read post list operation"
+          schema:
+            type: "array"
+            items:
+              properties:
+                user_name:
+                  type: "string"
+                vote:
+                  type: "string"
+                time_stamp:
+                  type: "string"
+                
